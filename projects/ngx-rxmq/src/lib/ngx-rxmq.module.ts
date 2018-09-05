@@ -9,7 +9,7 @@ import { MQable } from './contracts';
 export class NgxRxmqModule {
   static forRoot(consumers: Type<MQable>[] = []): ModuleWithProviders {
     return {
-      ngModule: NgxMqRootModule,
+      ngModule: NgxRxmqRootModule,
       providers: [
         RxmqService,
         consumers,
@@ -24,7 +24,7 @@ export class NgxRxmqModule {
 
   static forFeature(consumers: Type<MQable>[] = []): ModuleWithProviders {
     return {
-      ngModule: NgxMqFeatureModule,
+      ngModule: NgxRxmqFeatureModule,
       providers: [
         consumers,
         {
@@ -40,14 +40,14 @@ export class NgxRxmqModule {
 
 
 @NgModule({})
-class NgxMqRootModule {
+export class NgxRxmqRootModule {
   constructor(private mqService: RxmqService, @Inject(NGX_MQ_ROOT_CONSUMERS) private consumers: MQable[] = []) {
     connectConsumers(consumers, mqService);
   }
 }
 
 @NgModule({})
-class NgxMqFeatureModule {
+export class NgxRxmqFeatureModule {
   constructor(private mqService: RxmqService, @Inject(NGX_MQ_FEATURE_CONSUMERS) private consumerGroups: MQable[][] = []) {
     consumerGroups.forEach((group: MQable[]) => {
       connectConsumers(group, mqService);
@@ -55,11 +55,11 @@ class NgxMqFeatureModule {
   }
 }
 
-function getConsumerInstances(...instances: any[]) {
+export function getConsumerInstances(...instances: any[]) {
   return instances;
 }
 
-function connectConsumers(consumers: MQable[], mqService: RxmqService) {
+export function connectConsumers(consumers: MQable[], mqService: RxmqService) {
   consumers.forEach((consumer) => {
     if (consumer.connect) {
       consumer.connect(mqService);

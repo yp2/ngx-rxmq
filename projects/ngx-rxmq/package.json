@@ -1,6 +1,29 @@
 {
   "name": "ngx-rxmq",
   "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yp2/ngx-rxmq"
+  },
+  "bugs": {
+    "url": "https://github.com/yp2/ngx-rxmq/issues"
+  },
+  "author": {
+    "name": "Daniel 'yp2' Dereziński",
+    "email": "daniel.derezinski@gmail.com"
+  },
+  "keywords": [
+    "angular",
+    "rxmq",
+    "bus",
+    "message",
+    "queue",
+    "broker",
+    "rxjs",
+    "rx"
+  ],
+  "private": false,
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
