@@ -10,12 +10,12 @@ Angular 6 wrapper for [Rxmq.js](https://github.com/rxmqjs/rxmq.js) - in-memory m
 ## Install
 Npm:
 ```bash
-npm install ngx-rxmq --save
+npm install ngx-rxmq rxmq --save
 ```
 
 Yarn: 
 ```bash
-yarn add ngx-rxmq
+yarn add ngx-rxmq rxmq
 ```
 
 ## Description
