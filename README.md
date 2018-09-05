@@ -35,8 +35,6 @@ of application (`forRoot`) or on load of a feature module (`forFeature`).
 
 ## Usage
 ### Basic usage
-TODO: Support for `RequestResponseChannel`.
-
 Import `NgxRxmqModule.forRoot()` in AppModule. For feature modules (lazy loaded) import per module `NgxRxmqModule.forFeature()`
 
 In component - use of `Channel`:
