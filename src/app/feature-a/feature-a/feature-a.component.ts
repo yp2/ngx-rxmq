@@ -12,8 +12,8 @@ import { filter, map } from 'rxjs/operators';
 export class FeatureAComponent implements OnInit {
 
   public readonly form: FormGroup;
-  private demoAChanel: Channel<{}>;
-  private demoBChanel;
+  private demoAChanel: Channel<{message: string}>;
+  private demoBChanel: Channel<{message: string}>;
 
   constructor(private formBuilder: FormBuilder, private mq: RxmqService) {
     this.form = formBuilder.group({
@@ -28,13 +28,12 @@ export class FeatureAComponent implements OnInit {
   ngOnInit() {
     this.demoAChanel.observe('add.element')
       .pipe(
-        map(e => e['message']),
+        map(e => e.message),
         filter((message) => {
           return this.form.get('messageDemoA').value !== message;
         })
       )
       .subscribe((message) => {
-        console.log('sub', message);
         this.form.patchValue({
           messageDemoA: message
         });
@@ -48,6 +47,4 @@ export class FeatureAComponent implements OnInit {
   sendDemoB() {
     this.demoBChanel.subject('add.element').next({message: this.form.get('messageDemoB').value});
   }
-
-
 }

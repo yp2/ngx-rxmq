@@ -20,10 +20,10 @@ export class DemoAComponent implements OnInit {
   }
 
   emitB() {
-    this.mq.channel('demo-b').subject('add.element').next({message: 'Added element to demo-b'});
+    this.mq.channel<{message: string}>('demo-b').subject('add.element').next({message: 'Added element to demo-b'});
   }
 
   emitA() {
-    this.mq.channel('demo-a').subject('add.element').next({message: 'Added element to demo-a'});
+    this.mq.channel<{message: string}>('demo-a').subject('add.element').next({message: 'Added element to demo-a'});
   }
 }
