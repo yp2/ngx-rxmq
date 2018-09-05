@@ -1,0 +1,6 @@
+
+
+<button mat-raised-button color="primary" (click)="hideA = !hideA">Toggle A</button>
+<button mat-raised-button color="primary" (click)="hideB = !hideB">Toggle B</button>
+<app-demo-a *ngIf="!hideA"></app-demo-a>
+<app-demo-b *ngIf="!hideB"></app-demo-b>

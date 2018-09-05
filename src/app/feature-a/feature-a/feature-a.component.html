@@ -1,0 +1,10 @@
+<form class="example-form" [formGroup]="form">
+  <mat-form-field>
+    <input matInput placeholder="Message to demo-a" formControlName="messageDemoA">
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="sendDemoA()">Send to Demo-a </button>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Message to demo-b" formControlName="messageDemoB">
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="sendDemoB()">Send to Demo-b </button>
+</form>
