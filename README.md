@@ -5,7 +5,18 @@ Angular 6 wrapper for [Rxmq.js](https://github.com/rxmqjs/rxmq.js) - in-memory m
 ## Rxmq.js docs
 [Rxmq.js](https://github.com/rxmqjs/rxmq.js)
 
-[Docs Rxmq.js](http://rxmqjs.github.io/rxmq.js/) 
+[Docs Rxmq.js](http://rxmqjs.github.io/rxmq.js/)
+
+## Install
+Npm:
+```bash
+npm install ngx-rxmq --save
+```
+
+Yarn: 
+```bash
+yarn add ngx-rxmq
+```
 
 ## Description
 Package provides `RxmqService` that is a wrapper for [`Rxmq`](http://rxmqjs.github.io/rxmq.js/class/src/rxmq.js~Rxmq.html) message broker.
