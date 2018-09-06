@@ -10,7 +10,9 @@
     "e2e": "ng e2e",
     "build:lib": "ng build --prod ngx-rxmq",
     "pack:lib": "cd dist/ngx-rxmq && yarn pack",
-    "package:lib": "yarn run build:lib && yarn run pack:lib"
+    "copy:readme": "cp ./README.md ./dist/ngx-rxmq",
+    "copy:license": "cp ./LICENSE ./dist/ngx-rxmq",
+    "package:lib": "yarn run build:lib && yarn run copy:readme && yarn run copy:license && yarn run pack:lib"
   },
   "private": true,
   "dependencies": {
