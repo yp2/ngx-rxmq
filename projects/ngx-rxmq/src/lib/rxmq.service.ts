@@ -1,17 +1,14 @@
-import { Injectable } from '@angular/core';
-import Rxmq, { Channel } from 'rxmq';
-import { ChannelType, RequestResponseChannel } from './contracts';
-import { Observable } from 'rxjs';
+import { Inject, Injectable } from '@angular/core';
+import { Channel } from 'rxmq';
+import { RequestResponseChannel } from 'rxmq';
+import { RXMQ_INSTANCE } from './inject';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RxmqService {
 
-  private readonly rxmq = Rxmq;
-
-  constructor() {
-    console.log('instance RxmqService');
+  constructor(@Inject(RXMQ_INSTANCE) private readonly rxmq) {
   }
 
   channel<T>(name: string): Channel<T> {

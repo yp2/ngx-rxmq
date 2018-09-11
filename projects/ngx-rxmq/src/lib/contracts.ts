@@ -1,5 +1,5 @@
 import { RxmqService } from './rxmq.service';
-import { Channel, RequestResponseChannel } from 'rxmq';
+import { Channel, RequestResponseChannel,  } from 'rxmq';
 
 export interface MQable {
   connect(mq: RxmqService): void;
